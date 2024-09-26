@@ -1,10 +1,12 @@
 from pathlib import Path
 from typing  import Dict
-from json    import dumps
+from json    import dumps, loads
 from zipfile import ZipFile
 
 from .sample import define_boundries, Sample, create_sample, Bank
 from .pitch  import Pitch, Note, correct_pitch, pitch_shift_sample
+
+_banks: Dict[str, Bank] = None
 
 def create_bank(input_file: Path) -> None:
     
@@ -55,7 +57,29 @@ def create_bank(input_file: Path) -> None:
 
     print(f'Sample bank created: {bank_zip}')
 
+def install_bank(archive_path: Path, bank_install_path: Path) -> None:
+    target = bank_install_path/archive_path.stem
+    with ZipFile(archive_path, 'r') as zip_ref:
+        zip_ref.extractall(target)
+    
+def read_banks(bank_install_path: Path) -> None:
+    def read_bank(bank_path: Path) -> Bank:
+        json = bank_path/f'{bank_path.name}.json'
+        if json.exists():
+            bank_dict = loads(json.read_text())
+            new_bank = Bank.from_dict(bank_dict)
+            return new_bank        
+    for item in bank_install_path.iterdir():
+        if item.is_dir():
+            new_bank = read_bank(item)
+            new_bank.load(bank_install_path)
+            _banks[new_bank.name] = new_bank
 
+def get_bank(bank_name: str = None) -> Bank:
+    if bank_name:
+        return _banks[bank_name]
+    else:
+        return _banks[_banks.keys()[0]]
 
     
 

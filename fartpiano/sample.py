@@ -1,6 +1,6 @@
 from librosa         import load as rosa_load, piptrack
 from librosa.feature import rms as rms_calculation
-from numpy           import arange, max as np_max, where as np_where, argmax
+from numpy           import arange, max as np_max, where as np_where, argmax, ndarray
 from pathlib         import Path
 from soundfile       import write as sf_write
 from typing          import Tuple, Dict, Any
@@ -13,6 +13,9 @@ class Sample(object):
         self._sustain = sustain
         self._decay = decay
         self._pitch = pitch
+        self._attack_sample = None
+        self._sustain_sample = None
+        self._decay_sample = None
 
     def __str__(self) -> str:
         return f'Sample:\n\tAttack:  {self.attack}\n\tSustain: {self.sustain}\n\tDecay:  {self.decay}\n\tPitch:  {self.pitch}'
@@ -30,9 +33,29 @@ class Sample(object):
         return self._decay
     
     @property
+    def attack_sample(self) -> Tuple[ndarray, float]:
+        return self._attack_sample
+    
+    @property
+    def sustain_sample(self) -> Tuple[ndarray, float]:
+        return self._sustain_sample
+    
+    @property
+    def decay_buffer(self) -> Tuple[ndarray, float]:
+        return self._decay_sample
+    
+    @property
     def pitch(self) -> Pitch:
         return self._pitch
     
+    def load(self, sample_root: Path) -> None:
+        attack_load = sample_root/self.attack.name
+        sustain_load = sample_root/self.sustain.name
+        decay_load = sample_root/self.decay.name
+        self._attack_sample = rosa_load(attack_load, sr=None)
+        self._sustain_sample = rosa_load(sustain_load, sr=None)
+        self._decay_sample = rosa_load(decay_load, sr=None)
+
     def to_dict(self) -> Dict[str, str]:
         return {
             "pitch": str(self.pitch),
@@ -78,6 +101,12 @@ class Bank(object):
     
     def add_sample(self, pitch: Pitch, sample: Sample) -> None:
         self._samples[pitch] = sample
+
+    def load(self, sample_intall_path: Path) -> None:
+        sample_root = sample_intall_path/self.name
+        if sample_root.exists():
+            for sample_pitch in self.samples:
+                self.samples[sample_pitch].load(sample_root)
     
     @classmethod
     def from_dict(cls, dict: Dict[str, Any]) -> 'Bank':
@@ -88,7 +117,6 @@ class Bank(object):
                 return None
             ret.add_sample(new_sample.pitch, new_sample)
         return ret
-        
         
 def define_boundries(file_path: Path, frame_length=2048, hop_length=512, attack_percent=.75, sustain_percent=0.5) -> Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int]]:
     # Load the samples
@@ -131,4 +159,3 @@ def create_sample(file_path: Path, pitch: Pitch, boundries: Tuple[Tuple[int, int
 
     sample = Sample(attack_file, sustain_file, decay_file, pitch)
     return sample
-    
