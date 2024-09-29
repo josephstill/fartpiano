@@ -1,0 +1,389 @@
+{
+    "name": "fart",
+    "samples": [
+        {
+            "pitch": "G#5",
+            "attack": "fart_G#5_attack.wav",
+            "sustain": "fart_G#5_sustain.wav",
+            "decay": "fart_G#5_decay.wav"
+        },
+        {
+            "pitch": "A2",
+            "attack": "fart_A2_attack.wav",
+            "sustain": "fart_A2_sustain.wav",
+            "decay": "fart_A2_decay.wav"
+        },
+        {
+            "pitch": "A#2",
+            "attack": "fart_A#2_attack.wav",
+            "sustain": "fart_A#2_sustain.wav",
+            "decay": "fart_A#2_decay.wav"
+        },
+        {
+            "pitch": "B2",
+            "attack": "fart_B2_attack.wav",
+            "sustain": "fart_B2_sustain.wav",
+            "decay": "fart_B2_decay.wav"
+        },
+        {
+            "pitch": "C3",
+            "attack": "fart_C3_attack.wav",
+            "sustain": "fart_C3_sustain.wav",
+            "decay": "fart_C3_decay.wav"
+        },
+        {
+            "pitch": "C#3",
+            "attack": "fart_C#3_attack.wav",
+            "sustain": "fart_C#3_sustain.wav",
+            "decay": "fart_C#3_decay.wav"
+        },
+        {
+            "pitch": "D3",
+            "attack": "fart_D3_attack.wav",
+            "sustain": "fart_D3_sustain.wav",
+            "decay": "fart_D3_decay.wav"
+        },
+        {
+            "pitch": "D#3",
+            "attack": "fart_D#3_attack.wav",
+            "sustain": "fart_D#3_sustain.wav",
+            "decay": "fart_D#3_decay.wav"
+        },
+        {
+            "pitch": "E3",
+            "attack": "fart_E3_attack.wav",
+            "sustain": "fart_E3_sustain.wav",
+            "decay": "fart_E3_decay.wav"
+        },
+        {
+            "pitch": "F3",
+            "attack": "fart_F3_attack.wav",
+            "sustain": "fart_F3_sustain.wav",
+            "decay": "fart_F3_decay.wav"
+        },
+        {
+            "pitch": "F#3",
+            "attack": "fart_F#3_attack.wav",
+            "sustain": "fart_F#3_sustain.wav",
+            "decay": "fart_F#3_decay.wav"
+        },
+        {
+            "pitch": "G3",
+            "attack": "fart_G3_attack.wav",
+            "sustain": "fart_G3_sustain.wav",
+            "decay": "fart_G3_decay.wav"
+        },
+        {
+            "pitch": "G#3",
+            "attack": "fart_G#3_attack.wav",
+            "sustain": "fart_G#3_sustain.wav",
+            "decay": "fart_G#3_decay.wav"
+        },
+        {
+            "pitch": "A3",
+            "attack": "fart_A3_attack.wav",
+            "sustain": "fart_A3_sustain.wav",
+            "decay": "fart_A3_decay.wav"
+        },
+        {
+            "pitch": "A#3",
+            "attack": "fart_A#3_attack.wav",
+            "sustain": "fart_A#3_sustain.wav",
+            "decay": "fart_A#3_decay.wav"
+        },
+        {
+            "pitch": "B3",
+            "attack": "fart_B3_attack.wav",
+            "sustain": "fart_B3_sustain.wav",
+            "decay": "fart_B3_decay.wav"
+        },
+        {
+            "pitch": "C4",
+            "attack": "fart_C4_attack.wav",
+            "sustain": "fart_C4_sustain.wav",
+            "decay": "fart_C4_decay.wav"
+        },
+        {
+            "pitch": "C#4",
+            "attack": "fart_C#4_attack.wav",
+            "sustain": "fart_C#4_sustain.wav",
+            "decay": "fart_C#4_decay.wav"
+        },
+        {
+            "pitch": "D4",
+            "attack": "fart_D4_attack.wav",
+            "sustain": "fart_D4_sustain.wav",
+            "decay": "fart_D4_decay.wav"
+        },
+        {
+            "pitch": "D#4",
+            "attack": "fart_D#4_attack.wav",
+            "sustain": "fart_D#4_sustain.wav",
+            "decay": "fart_D#4_decay.wav"
+        },
+        {
+            "pitch": "E4",
+            "attack": "fart_E4_attack.wav",
+            "sustain": "fart_E4_sustain.wav",
+            "decay": "fart_E4_decay.wav"
+        },
+        {
+            "pitch": "F4",
+            "attack": "fart_F4_attack.wav",
+            "sustain": "fart_F4_sustain.wav",
+            "decay": "fart_F4_decay.wav"
+        },
+        {
+            "pitch": "F#4",
+            "attack": "fart_F#4_attack.wav",
+            "sustain": "fart_F#4_sustain.wav",
+            "decay": "fart_F#4_decay.wav"
+        },
+        {
+            "pitch": "G4",
+            "attack": "fart_G4_attack.wav",
+            "sustain": "fart_G4_sustain.wav",
+            "decay": "fart_G4_decay.wav"
+        },
+        {
+            "pitch": "G#4",
+            "attack": "fart_G#4_attack.wav",
+            "sustain": "fart_G#4_sustain.wav",
+            "decay": "fart_G#4_decay.wav"
+        },
+        {
+            "pitch": "A4",
+            "attack": "fart_A4_attack.wav",
+            "sustain": "fart_A4_sustain.wav",
+            "decay": "fart_A4_decay.wav"
+        },
+        {
+            "pitch": "A#4",
+            "attack": "fart_A#4_attack.wav",
+            "sustain": "fart_A#4_sustain.wav",
+            "decay": "fart_A#4_decay.wav"
+        },
+        {
+            "pitch": "B4",
+            "attack": "fart_B4_attack.wav",
+            "sustain": "fart_B4_sustain.wav",
+            "decay": "fart_B4_decay.wav"
+        },
+        {
+            "pitch": "C5",
+            "attack": "fart_C5_attack.wav",
+            "sustain": "fart_C5_sustain.wav",
+            "decay": "fart_C5_decay.wav"
+        },
+        {
+            "pitch": "C#5",
+            "attack": "fart_C#5_attack.wav",
+            "sustain": "fart_C#5_sustain.wav",
+            "decay": "fart_C#5_decay.wav"
+        },
+        {
+            "pitch": "D5",
+            "attack": "fart_D5_attack.wav",
+            "sustain": "fart_D5_sustain.wav",
+            "decay": "fart_D5_decay.wav"
+        },
+        {
+            "pitch": "D#5",
+            "attack": "fart_D#5_attack.wav",
+            "sustain": "fart_D#5_sustain.wav",
+            "decay": "fart_D#5_decay.wav"
+        },
+        {
+            "pitch": "E5",
+            "attack": "fart_E5_attack.wav",
+            "sustain": "fart_E5_sustain.wav",
+            "decay": "fart_E5_decay.wav"
+        },
+        {
+            "pitch": "F5",
+            "attack": "fart_F5_attack.wav",
+            "sustain": "fart_F5_sustain.wav",
+            "decay": "fart_F5_decay.wav"
+        },
+        {
+            "pitch": "F#5",
+            "attack": "fart_F#5_attack.wav",
+            "sustain": "fart_F#5_sustain.wav",
+            "decay": "fart_F#5_decay.wav"
+        },
+        {
+            "pitch": "G5",
+            "attack": "fart_G5_attack.wav",
+            "sustain": "fart_G5_sustain.wav",
+            "decay": "fart_G5_decay.wav"
+        },
+        {
+            "pitch": "A5",
+            "attack": "fart_A5_attack.wav",
+            "sustain": "fart_A5_sustain.wav",
+            "decay": "fart_A5_decay.wav"
+        },
+        {
+            "pitch": "A#5",
+            "attack": "fart_A#5_attack.wav",
+            "sustain": "fart_A#5_sustain.wav",
+            "decay": "fart_A#5_decay.wav"
+        },
+        {
+            "pitch": "B5",
+            "attack": "fart_B5_attack.wav",
+            "sustain": "fart_B5_sustain.wav",
+            "decay": "fart_B5_decay.wav"
+        },
+        {
+            "pitch": "C6",
+            "attack": "fart_C6_attack.wav",
+            "sustain": "fart_C6_sustain.wav",
+            "decay": "fart_C6_decay.wav"
+        },
+        {
+            "pitch": "C#6",
+            "attack": "fart_C#6_attack.wav",
+            "sustain": "fart_C#6_sustain.wav",
+            "decay": "fart_C#6_decay.wav"
+        },
+        {
+            "pitch": "D6",
+            "attack": "fart_D6_attack.wav",
+            "sustain": "fart_D6_sustain.wav",
+            "decay": "fart_D6_decay.wav"
+        },
+        {
+            "pitch": "D#6",
+            "attack": "fart_D#6_attack.wav",
+            "sustain": "fart_D#6_sustain.wav",
+            "decay": "fart_D#6_decay.wav"
+        },
+        {
+            "pitch": "E6",
+            "attack": "fart_E6_attack.wav",
+            "sustain": "fart_E6_sustain.wav",
+            "decay": "fart_E6_decay.wav"
+        },
+        {
+            "pitch": "F6",
+            "attack": "fart_F6_attack.wav",
+            "sustain": "fart_F6_sustain.wav",
+            "decay": "fart_F6_decay.wav"
+        },
+        {
+            "pitch": "F#6",
+            "attack": "fart_F#6_attack.wav",
+            "sustain": "fart_F#6_sustain.wav",
+            "decay": "fart_F#6_decay.wav"
+        },
+        {
+            "pitch": "G6",
+            "attack": "fart_G6_attack.wav",
+            "sustain": "fart_G6_sustain.wav",
+            "decay": "fart_G6_decay.wav"
+        },
+        {
+            "pitch": "G#6",
+            "attack": "fart_G#6_attack.wav",
+            "sustain": "fart_G#6_sustain.wav",
+            "decay": "fart_G#6_decay.wav"
+        },
+        {
+            "pitch": "A6",
+            "attack": "fart_A6_attack.wav",
+            "sustain": "fart_A6_sustain.wav",
+            "decay": "fart_A6_decay.wav"
+        },
+        {
+            "pitch": "A#6",
+            "attack": "fart_A#6_attack.wav",
+            "sustain": "fart_A#6_sustain.wav",
+            "decay": "fart_A#6_decay.wav"
+        },
+        {
+            "pitch": "B6",
+            "attack": "fart_B6_attack.wav",
+            "sustain": "fart_B6_sustain.wav",
+            "decay": "fart_B6_decay.wav"
+        },
+        {
+            "pitch": "C7",
+            "attack": "fart_C7_attack.wav",
+            "sustain": "fart_C7_sustain.wav",
+            "decay": "fart_C7_decay.wav"
+        },
+        {
+            "pitch": "C#7",
+            "attack": "fart_C#7_attack.wav",
+            "sustain": "fart_C#7_sustain.wav",
+            "decay": "fart_C#7_decay.wav"
+        },
+        {
+            "pitch": "D7",
+            "attack": "fart_D7_attack.wav",
+            "sustain": "fart_D7_sustain.wav",
+            "decay": "fart_D7_decay.wav"
+        },
+        {
+            "pitch": "D#7",
+            "attack": "fart_D#7_attack.wav",
+            "sustain": "fart_D#7_sustain.wav",
+            "decay": "fart_D#7_decay.wav"
+        },
+        {
+            "pitch": "E7",
+            "attack": "fart_E7_attack.wav",
+            "sustain": "fart_E7_sustain.wav",
+            "decay": "fart_E7_decay.wav"
+        },
+        {
+            "pitch": "F7",
+            "attack": "fart_F7_attack.wav",
+            "sustain": "fart_F7_sustain.wav",
+            "decay": "fart_F7_decay.wav"
+        },
+        {
+            "pitch": "F#7",
+            "attack": "fart_F#7_attack.wav",
+            "sustain": "fart_F#7_sustain.wav",
+            "decay": "fart_F#7_decay.wav"
+        },
+        {
+            "pitch": "G7",
+            "attack": "fart_G7_attack.wav",
+            "sustain": "fart_G7_sustain.wav",
+            "decay": "fart_G7_decay.wav"
+        },
+        {
+            "pitch": "G#7",
+            "attack": "fart_G#7_attack.wav",
+            "sustain": "fart_G#7_sustain.wav",
+            "decay": "fart_G#7_decay.wav"
+        },
+        {
+            "pitch": "A7",
+            "attack": "fart_A7_attack.wav",
+            "sustain": "fart_A7_sustain.wav",
+            "decay": "fart_A7_decay.wav"
+        },
+        {
+            "pitch": "A#7",
+            "attack": "fart_A#7_attack.wav",
+            "sustain": "fart_A#7_sustain.wav",
+            "decay": "fart_A#7_decay.wav"
+        },
+        {
+            "pitch": "B7",
+            "attack": "fart_B7_attack.wav",
+            "sustain": "fart_B7_sustain.wav",
+            "decay": "fart_B7_decay.wav"
+        },
+        {
+            "pitch": "C8",
+            "attack": "fart_C8_attack.wav",
+            "sustain": "fart_C8_sustain.wav",
+            "decay": "fart_C8_decay.wav"
+        }
+    ]
+}
