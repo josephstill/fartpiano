@@ -4,6 +4,8 @@ from typing    import List
 from threading import Thread
 from mido      import open_input
 
+from .pitch import Pitch 
+
 class MIDIEventType(Enum):
     PRESS   = 0
     RELEASE = 1
@@ -12,15 +14,18 @@ class MIDIEvent(object):
 
     def __init__(self, event: MIDIEventType, note: str, velocity: float) -> None:
         self._event = event
-        self._note = note
+        self._note = Pitch.from_midi(note)
         self._velocity = velocity
+
+    def __str__(self) -> str:
+        return f'{self._event.name} {self._note}'
 
     @property
     def event(self) -> MIDIEventType:
         return self._event
     
     @property
-    def note(self) -> str:
+    def note(self) -> Pitch:
         return self._note
     
     @property
@@ -54,7 +59,7 @@ class MIDIDeviceManager(Thread):
                         event = MIDIEvent(MIDIEventType.RELEASE, msg.note, msg.velocity)
                     else:
                         continue
-                self._notify_listeners(event)
+                    self._notify_listeners(event)
 
     def _notify_listeners(self, event: MIDIEvent) -> None:
         for listener in self._listeners:

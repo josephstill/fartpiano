@@ -213,6 +213,13 @@ class Pitch(object):
         
         return Pitch(note, octave)
 
+    @classmethod
+    def from_midi(cls, val: str) -> 'Pitch':
+        midi_note_number = int(val)
+        note = _OCTAVE_ORDER[midi_note_number % 12]
+        octave = (midi_note_number // 12) - 1
+        return Pitch(note=note, octave=octave)
+        
     def _update_frequency(self, note: Note, octave: int) -> None:
         self._note = note
         self._octave = octave
