@@ -94,7 +94,7 @@ class Note(Enum):
     @classmethod
     def from_string(cls, val: str) -> 'Note':
         for note in Note:
-            if note.name == val:
+            if note.value['name'] == val:
                 return note
         return None
 

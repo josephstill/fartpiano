@@ -7,8 +7,11 @@ setup(
     include_package_data=True,  # Ensures resources are included
     package_data={
         'fartpiano': [
-            'resources/banks/fart/fart.json',
+            'resources',
+            'resources/banks',
+            'resources/banks/fart/',
             'resources/banks/fart/*.wav',
+            'resources/banks/fart/fart.json',
             'resources/configuration/piano.ini',
         ],
     },

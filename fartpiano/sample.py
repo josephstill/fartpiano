@@ -66,7 +66,7 @@ class Sample(object):
     
     @classmethod
     def from_dict(cls, dict: Dict[str, str]) -> 'Sample':
-        attack = Path(dict['attach'])
+        attack = Path(dict['attack'])
         sustain = Path(dict['sustain'])
         decay = Path(dict['decay'])
         pitch = Pitch.from_string(dict['pitch'])

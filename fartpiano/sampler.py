@@ -63,12 +63,14 @@ def install_bank(archive_path: Path, bank_install_path: Path) -> None:
         zip_ref.extractall(target)
     
 def read_banks(bank_install_path: Path) -> None:
+    global _banks
     def read_bank(bank_path: Path) -> Bank:
         json = bank_path/f'{bank_path.name}.json'
         if json.exists():
             bank_dict = loads(json.read_text())
             new_bank = Bank.from_dict(bank_dict)
-            return new_bank        
+            return new_bank
+    _banks = {}        
     for item in bank_install_path.iterdir():
         if item.is_dir():
             new_bank = read_bank(item)
