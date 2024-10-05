@@ -1,5 +1,7 @@
-from   sounddevice import play, wait as sd_wait
-from   threading   import Thread
+from sounddevice import play, wait as sd_wait
+from threading   import Thread
+from numpy       import ndarray
+from typing      import Tuple
 
 from .sample import Sample, Bank
 from .pitch  import Pitch
@@ -7,6 +9,7 @@ from .pitch  import Pitch
 
 class SoundAction(Thread):
     def __init__(self, sample: Sample) -> None:
+        Thread.__init__(self)
         self._sample = sample
         self._playing = False
 
@@ -14,15 +17,16 @@ class SoundAction(Thread):
         if not self._playing:
             self.start() 
 
+    def do_play(self, sample: Tuple[ndarray, float]) -> None:
+        play(data=sample[0], samplerate=sample[1])
+        sd_wait()
+
     def run(self) -> None:
         self._playing = True
-        play(self._sample.attack_sample)
-        sd_wait()
+        self.do_play(self._sample.attack_sample)
         while self._playing:
-            play(self._sample.sustain_sample)
-            sd_wait()
-        play(self._sample.decay_sample)
-        sd_wait()
+            self.do_play(self._sample.sustain_sample)
+        self.do_play(self._sample.decay_sample)
             
     def release(self) -> None:
         self._playing = False
@@ -34,8 +38,9 @@ class SoundManager(object):
         self._actions = {}
 
     def attack(self, pitch: Pitch) -> None:
+        print(f'Playing {pitch}')
         if pitch not in self._actions:
-            sa = SoundAction(self._bank[pitch])
+            sa = SoundAction(self._bank.samples[pitch])
             self._actions[pitch] = sa
             sa.attack()
 

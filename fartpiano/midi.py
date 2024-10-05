@@ -41,6 +41,7 @@ class MIDIEventListener(ABC):
 class MIDIDeviceManager(Thread):
 
     def __init__(self, device_id: str) -> None:
+        Thread.__init__(self)
         self._device_id = device_id
         self._listeners: List[MIDIEventListener] = []
         self._running = False
