@@ -41,7 +41,7 @@ class Sample(object):
         return self._sustain_sample
     
     @property
-    def decay_buffer(self) -> Tuple[ndarray, float]:
+    def decay_sample(self) -> Tuple[ndarray, float]:
         return self._decay_sample
     
     @property

@@ -81,7 +81,7 @@ def get_bank(bank_name: str = None) -> Bank:
     if bank_name:
         return _banks[bank_name]
     else:
-        return _banks[_banks.keys()[0]]
+        return _banks[list(_banks.keys())[0]]
 
     
 
