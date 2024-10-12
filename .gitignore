@@ -1,3 +1,6 @@
 *__pycache__*
 *.pyc
 *peaks*
+fartpiano.egg-info/
+build/
+dist/

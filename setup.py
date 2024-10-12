@@ -5,7 +5,7 @@ def parse_requirements(filename):
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
 setup(
-    name='FartPiano',
+    name='fartpiano',
     version='0.0',
     description='A midi event processor that makes fart sounds.', 
     author='Joseph',   

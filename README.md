@@ -19,8 +19,11 @@ git clone git@github.com:josephstill/fartpiano.git
 # Change to the project directory
 cd fartpiano
 
+# Install build dependencies
+pip install setuptools wheel
+
 # Build the package
-python build.py
+python setup.py bdist_wheel
 ```
 
 This will get a python wheel that you can install; however, its unnecessary as you can run the piano in the source tree. 
