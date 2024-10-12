@@ -6,7 +6,7 @@ def parse_requirements(filename):
 
 setup(
     name='fartpiano',
-    version='0.1',
+    version='0.2',
     description='A midi event processor that makes fart sounds.', 
     author='Joseph',   
     license='GNU General Public License v3.0',    
