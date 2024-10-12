@@ -13,7 +13,7 @@ def get_configuration() -> ConfigParser:
     return config
 
 def get_configuration_file() -> Path:
-    user_config = Path.home()/'.fartpiano'/'piano.ini'
+    user_config = Path.home()/'.config'/'fartpiano'/'piano.ini'
     run_in_source = Path.cwd()/'fartpiano'/'resources'/'configuration'/'piano.ini'
     if user_config.exists():
         return user_config
@@ -23,7 +23,7 @@ def get_configuration_file() -> Path:
     return run_in_source    
     
 def get_default_bank_path() -> Path:
-    user_banks = Path.home()/'.fartpiano'/'banks'
+    user_banks = Path.home()/'.cache'/'fartpiano'/'banks'
     run_in_source = Path.cwd()/'fartpiano'/'resources'/'banks'
     if user_banks.exists():
         return user_banks
