@@ -11,12 +11,14 @@ if __name__ == "__main__":
     parser = ArgumentParser(prog='FartSampler', description='TODO')
     args = parser.parse_args()
 
-    midi_device_name = get_configuration()['devices']['midi'].replace('"', '')
+    midi_device_name = get_configuration().get('devices', 'midi') 
     device_manager = MIDIDeviceManager(midi_device_name)
 
     default_bank_dir = get_default_bank_path()
     read_banks(default_bank_dir)
-    piano = Piano(get_bank())
+
+    single_loop = get_configuration().getboolean('piano', 'single_loop', fallback=False)
+    piano = Piano(get_bank(), single_loop)
     device_manager.add_listener(piano)
 
     device_manager.run()

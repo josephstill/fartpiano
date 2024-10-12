@@ -8,12 +8,14 @@ from .sample import Sample, Bank
 from .pitch  import Pitch
 
 class SoundAction(Thread):
-    def __init__(self, sample: Sample) -> None:
+    def __init__(self, sample: Sample, single_loop: bool) -> None:
         Thread.__init__(self)
         self._sample = sample
         self._attack_sample = Sound(sample.attack)
         self._sustain_sample = Sound(sample.sustain)
         self._decay_sample = Sound(sample.decay)
+
+        self._single_loop = single_loop
         self._sustain_length = self._sustain_sample.get_length()
         self._playing = False
         self._release = False
@@ -30,12 +32,17 @@ class SoundAction(Thread):
         while attack_channel.get_busy():
             sleep(0.001)
 
-        sustain_channel = self._sustain_sample.play(loops=-1)
-        while not self._release:
-            sleep(0.1)
-        self._sustain_sample.stop()
-        while sustain_channel.get_busy():
-            sleep(0.001)        
+        if self._single_loop:
+            sustain_channel = self._sustain_sample.play()
+            while sustain_channel.get_busy():
+                sleep(0.01)
+        else:
+            sustain_channel = self._sustain_sample.play(loops=-1)
+            while not self._release:
+                sleep(0.1)
+            self._sustain_sample.stop()
+            while sustain_channel.get_busy():
+                sleep(0.001)        
 
         decay_channel = self._decay_sample.play()
         while decay_channel.get_busy():
@@ -47,13 +54,14 @@ class SoundAction(Thread):
 
 
 class SoundManager(object):
-    def __init__(self, bank: Bank) -> None:
+    def __init__(self, bank: Bank, single_loop_mode) -> None:
         self._bank = bank
         self._actions = {}
+        self._single_loop_mode = single_loop_mode
 
     def attack(self, pitch: Pitch) -> None:
         if pitch not in self._actions:
-            sa = SoundAction(self._bank.samples[pitch])
+            sa = SoundAction(self._bank.samples[pitch], self._single_loop_mode)
             self._actions[pitch] = sa
             sa.attack()
 
