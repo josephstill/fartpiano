@@ -31,30 +31,15 @@ class Sample(object):
     @property
     def decay(self) -> Path:
         return self._decay
-    
-    @property
-    def attack_sample(self) -> Tuple[ndarray, float]:
-        return self._attack_sample
-    
-    @property
-    def sustain_sample(self) -> Tuple[ndarray, float]:
-        return self._sustain_sample
-    
-    @property
-    def decay_sample(self) -> Tuple[ndarray, float]:
-        return self._decay_sample
-    
+        
     @property
     def pitch(self) -> Pitch:
         return self._pitch
     
     def load(self, sample_root: Path) -> None:
-        attack_load = sample_root/self.attack.name
-        sustain_load = sample_root/self.sustain.name
-        decay_load = sample_root/self.decay.name
-        self._attack_sample = rosa_load(attack_load, sr=None)
-        self._sustain_sample = rosa_load(sustain_load, sr=None)
-        self._decay_sample = rosa_load(decay_load, sr=None)
+        self._attack = sample_root/self.attack.name
+        self._sustain = sample_root/self.sustain.name
+        self._decay = sample_root/self.decay.name
 
     def to_dict(self) -> Dict[str, str]:
         return {

@@ -1,10 +1,11 @@
 from .midi    import MIDIEventListener, MIDIEvent, MIDIEventType
 from .sampler import Bank
-from .sound   import SoundManager
+from .sound   import SoundManager, init_sound
 
 class Piano(MIDIEventListener):
 
     def __init__(self, bank: Bank) -> None:
+        init_sound()
         self._sound_manager = SoundManager(bank)
 
     def on_midi_event(self, event: MIDIEvent) -> None:
